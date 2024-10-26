@@ -9,16 +9,16 @@
     "lint": "standard"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "cross-env": "^7.0.3",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "cookie-parser": "1.4.7",
+    "cross-env": "7.0.3",
+    "debug": "4.3.7",
+    "ejs": "3.1.10",
+    "express": "4.21.1",
+    "http-errors": "2.0.0",
+    "morgan": "1.10.0"
   },
   "devDependencies": {
-    "standard": "^17.1.2"
+    "standard": "17.1.2"
   },
   "eslintConfig": {
     "extends": "standard"
