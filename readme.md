@@ -1,4 +1,6 @@
-# Custom template coming from [`npx express-generator . --ejs`](https://www.npmjs.com/package/express-generator)
+# Custom template coming from
+
+[`npx express-generator . --ejs`](https://www.npmjs.com/package/express-generator)
 
 - **Updated (27/10/2024) all the dependencies to fix the vulnerabilities**
 
