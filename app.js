@@ -1,25 +1,36 @@
-const createError = require('http-errors')
-const express = require('express')
-const path = require('path')
-const cookieParser = require('cookie-parser')
-const logger = require('morgan')
+import { join } from 'node:path'
+import express from 'express'
+import createError from 'http-errors'
+import cookieParser from 'cookie-parser'
+import logger from 'morgan'
 
-const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
+import indexRouter from './routes/index.js'
+import usersRouter from './routes/users.js'
 
 const app = express()
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', join(import.meta.dirname, 'views'))
 app.set('view engine', 'ejs')
 
-app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+// middlewares
 
+// morgan logger for http requests logs
+app.use(logger('dev'))
+// transforms json objects into js objects
+app.use(express.json())
+// transforms data sent by a form to a js object
+app.use(express.urlencoded({ extended: false }))
+// cookie parser to get cookies from client
+app.use(cookieParser())
+// set the folder where statis resources will be served
+app.use(express.static(join(import.meta.dirname, 'public')))
+
+// Routing
+
+// homepage
 app.use('/', indexRouter)
+// user page
 app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler
@@ -38,4 +49,4 @@ app.use(function (err, req, res, next) {
   res.render('error')
 })
 
-module.exports = app
+export default app

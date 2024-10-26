@@ -2,6 +2,7 @@
   "name": "npx-express-generator-ejs",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "node --watch ./bin/www",
     "debug": "cross-env PORT=5555 DEBUG=npx-express-generator-ejs:* npm start",
